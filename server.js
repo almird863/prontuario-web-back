@@ -20,7 +20,7 @@ const app = express();
 // credentials: true permite que o navegador envie o cookie de sessão
 app.use(
   cors({
-    origin: ["http://localhost:5500", "http://127.0.0.1:5500", "https://almir863.github.io"],
+    origin: ["http://localhost:5500", "http://127.0.0.1:5500", "https://almir863.github.io",],
     credentials: true,
   })
 );
@@ -38,8 +38,8 @@ app.use(
     cookie: {
       httpOnly: true, // o JavaScript da página não consegue ler o cookie
       sameSite: "lax",
-      secure: false, // em produção (com HTTPS) isso passa a ser true
-      maxAge: 30 * 60 * 1000,
+      secure: true, // em produção (com HTTPS) isso passa a ser true
+      maxAge: 60 * 60 * 1000,
     },
   })
 );
