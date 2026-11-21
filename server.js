@@ -37,7 +37,7 @@ app.use(
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI, ttl: 30 * 60 }),
     cookie: {
       httpOnly: true, // o JavaScript da página não consegue ler o cookie
-      sameSite: "lax",
+      sameSite: "none",
       secure: true, // em produção (com HTTPS) isso passa a ser true
       maxAge: 60 * 60 * 1000,
     },
