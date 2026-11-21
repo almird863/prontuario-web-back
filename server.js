@@ -20,7 +20,7 @@ const app = express();
 // credentials: true permite que o navegador envie o cookie de sessão
 app.use(
   cors({
-    origin: ["http://localhost:5500", "http://127.0.0.1:5500", "https://almird863.github.io"],
+    origin: ["http://localhost:5500", "http://127.0.0.1:5500"],
     credentials: true,
   })
 );
@@ -50,6 +50,8 @@ app.get("/api/saude", (req, res) => {
 });
 
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/pacientes/:id/prontuario", exigirLogin, require("./routes/prontuario")); // prontuário de um paciente
+app.use("/api/pacientes/:id/evolucoes", exigirLogin, require("./routes/evolucoes")); // sessões de um paciente
 app.use("/api/pacientes", exigirLogin, require("./routes/pacientes")); // só para quem está logado
 
 async function iniciar() {
