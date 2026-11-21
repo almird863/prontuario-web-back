@@ -20,7 +20,7 @@ const app = express();
 // credentials: true permite que o navegador envie o cookie de sessão
 app.use(
   cors({
-    origin: ["http://localhost:5500", "http://127.0.0.1:5500", "https://almir863.github.io",],
+    origin: ["http://localhost:5500", "http://127.0.0.1:5500", "https://almird863.github.io",],
     credentials: true,
   })
 );
