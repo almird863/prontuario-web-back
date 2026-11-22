@@ -81,6 +81,8 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/pacientes/:id/prontuario", exigirLogin, require("./routes/prontuario")); // prontuário de um paciente
 app.use("/api/pacientes/:id/evolucoes", exigirLogin, require("./routes/evolucoes")); // sessões de um paciente
 app.use("/api/pacientes", exigirLogin, require("./routes/pacientes")); // só para quem está logado
+app.use("/api/pacientes/:id/status", exigirLogin, require("./routes/status"));
+
 
 async function iniciar() {
   try {
